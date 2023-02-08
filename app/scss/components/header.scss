@@ -1,1 +1,7 @@
 @use '../functions' as *;
+
+.header {
+    @include flex-space-between;
+    margin-top: rem(50);
+    margin-bottom: rem(30);
+}

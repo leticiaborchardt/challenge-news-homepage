@@ -1,0 +1,26 @@
+@use '../functions' as *;
+@use '../globals/variables.scss' as *;
+
+.navbar {
+    &__menu {
+        @include flex-space-between;
+        list-style: none;
+        font-size: rem(16);
+
+        &-item:not(:last-child) {
+            margin-right: rem(36);
+        }
+
+        &-item {
+            a {
+                text-decoration: none;
+                color: $text-color;
+            }
+
+            a:hover {
+                color: $text-hover-color;
+                transition: .3s ease-in-out;
+            }
+        }
+    }
+}
