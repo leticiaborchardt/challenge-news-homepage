@@ -1,0 +1,7 @@
+@use 'sass:math';
+
+// converte pixel para rem
+@function rem($pixels, $context: 16) {
+    @return (math.div($pixels, $context)) * 1rem;
+}
+
