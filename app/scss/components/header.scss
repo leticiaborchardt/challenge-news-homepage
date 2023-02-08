@@ -4,4 +4,23 @@
     @include flex-space-between;
     margin-top: rem(50);
     margin-bottom: rem(30);
+
+    @include breakpoint-down(small) {
+        margin-top: rem(30);
+        margin-bottom: rem(20);
+    }
+
+    &__navbar {
+        &--desktop {
+            @include breakpoint-down(small) {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            @include breakpoint(medium) {
+                display: none;
+            }    
+        }
+    }
 }

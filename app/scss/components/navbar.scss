@@ -7,6 +7,17 @@
         list-style: none;
         font-size: rem(16);
 
+        &--mobile {
+            align-items: start;
+            flex-direction: column;
+            justify-content: center;
+
+            .navbar__menu-item {
+                margin-bottom: rem(24);
+                font-size: rem(18);
+            }
+        }
+
         &-item:not(:last-child) {
             margin-right: rem(36);
         }
@@ -21,6 +32,25 @@
                 color: $text-hover-color;
                 transition: .3s ease-in-out;
             }
+        }
+    }
+
+    &__mobile {
+        height: 100%;
+        width: 0;
+        background: $bg-color;
+        z-index: 9;
+        position: fixed;
+        right: 0;
+        top: 0;
+        overflow-x: hidden;
+        transition: all 0.5s;
+
+        &-header {
+            display: flex;
+            justify-content: end;
+            margin: rem(20) rem(15);
+            margin-bottom: rem(56);
         }
     }
 }

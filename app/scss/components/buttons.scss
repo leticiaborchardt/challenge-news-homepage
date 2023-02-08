@@ -1,0 +1,14 @@
+@use '../functions' as *;
+
+.btn {
+    &__navbar-mobile {
+        @include breakpoint(medium) {
+            display: none;
+        }
+
+        i {
+            font-size: rem(32);
+        }
+    }
+
+}
