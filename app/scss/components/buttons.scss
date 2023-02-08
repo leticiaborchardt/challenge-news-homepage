@@ -1,14 +1,26 @@
 @use '../functions' as *;
+@use '../globals/variables.scss' as *;
 
 .btn {
+    color: $color-white;
+    padding: rem(14) rem(32);
+    text-transform: uppercase;
+    font-size: rem(15);
+    font-weight: 700;
+    letter-spacing: rem(2);
+
+    &__primary {
+        background: $color-soft-red;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            background: $color-dark-blue;
+        }
+    }
+
     &__navbar-mobile {
         @include breakpoint(medium) {
             display: none;
         }
-
-        i {
-            font-size: rem(32);
-        }
     }
-
 }

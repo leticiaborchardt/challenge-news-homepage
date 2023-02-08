@@ -26,3 +26,10 @@ a:visited,
 a:active {
     text-decoration: none;
 }
+
+p {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    font-size: rem(15);
+}

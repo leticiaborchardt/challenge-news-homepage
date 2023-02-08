@@ -1,0 +1,42 @@
+@use '../functions' as *;
+@use '../globals/variables.scss' as *;
+
+.content {
+    &-grid {
+        display: grid;
+        grid-template-rows: repeat(2);
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(32);
+    }
+
+    &__main {
+        &-image {
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-title {
+            font-size: rem(52);
+        }
+
+        &-description {
+            p {
+                line-height: 1.5;
+                margin-bottom: rem(40);
+            }
+        }
+    }
+
+    &__new-card {
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+
+}
