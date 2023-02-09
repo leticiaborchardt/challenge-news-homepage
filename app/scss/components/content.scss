@@ -7,12 +7,33 @@
         grid-template-rows: repeat(2);
         grid-template-columns: repeat(3, 1fr);
         gap: rem(32);
+
+        @include breakpoint-down(medium) {
+            grid-template-rows: repeat(3);
+            grid-template-columns: 1fr;
+        }
     }
 
     &__main {
         &-image {
             grid-column-start: 1;
             grid-column-end: 3;
+
+            @include breakpoint-down(small) {
+                grid-column-start: 1;
+                grid-column-end: 1;
+
+                &--desktop {
+                    display: none;
+                }
+            }
+
+            @include breakpoint(medium) {
+                &--mobile {
+                    display: none;
+                }
+            }
+
 
             img {
                 width: 100%;
@@ -21,11 +42,22 @@
 
         &-title {
             font-size: rem(52);
+
+            @include breakpoint-down(medium) {
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
         }
 
         &-description {
+            @include breakpoint-down(medium) {
+                grid-column-start: 1;
+                grid-column-end: 1;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+
             p {
-                line-height: 1.5;
                 margin-bottom: rem(40);
             }
         }
@@ -36,7 +68,48 @@
         grid-column-end: 3;
         grid-row-start: 1;
         grid-row-end: 3;
+
+        @include breakpoint-down(medium) {
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 4;
+            grid-row-end: 5;
+
+            margin-top: rem(46);
+        }
+    }
+}
+
+.new-card {
+    padding: rem(20);
+    background: $color-dark-blue;
+    color: $color-white;
+
+
+    &__title {
+        font-size: rem(40);
+        color: $color-soft-orange;
+        margin-bottom: rem(28);
     }
 
+    &__subtitle {
+        color: $color-white;
+        font-weight: 700;
+        transition: .3s ease-in-out;
+        font-size: rem(20);
 
+        &:hover {
+            color: $color-soft-orange;
+        }
+    }
+
+    &__divisor {
+        margin: rem(28) 0;
+        border-top: 1px solid hsla(0, 0%, 67%, 0.438);
+    }
+
+    &__text {
+        margin-top: rem(16);
+        color: $color-light-gray;
+    }
 }
